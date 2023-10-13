@@ -1,0 +1,104 @@
+{% extends "SofiaApp/base.html" %}
+
+{% load static %}
+
+{% block about %}
+{%endblock%}
+{% block about2 %}
+{%endblock%}
+{% block content1 %}
+<ul class="navbar-nav menu" style="padding-left:10px">
+    <li class="nav-item">
+        <div class="dropdown"style="margin-right:50px">
+            <a class="btn btn-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">Opciones</a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item" href="{% url 'Nota' %}">Notas</a></li>
+                <li><a class="dropdown-item" href="{% url 'Contenido' %}">Contenido</a></li>
+                <li><a class="dropdown-item" href="{% url 'Recurso Educativo' %}">Recurso Educativo</a></li>
+                <li><a class="dropdown-item" href="{% url 'Tarea' %}">Tarea</a></li>
+            </ul>
+        </div>
+    </li>
+  </ul>
+{% endblock %}
+
+{% block content4%}
+<li class="nav-item">
+    <div class="dropdown"style="margin-right:50px">
+        <a class="btn btn-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">Acciones</a>
+        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuLink">
+            <li><a class="dropdown-item" href="{% url 'Administrar Nota' %}">Administrar Nota</a></li>
+            <li><a class="dropdown-item" href="{% url 'Administrar Contenido' %}">Administrar Contenido</a></li>
+            <li><a class="dropdown-item" href="{% url 'Administrar Recurso Educativo' %}">Administrar Recurso Educativo</a></li>
+            <li><a class="dropdown-item" href="{% url 'Administrar Tarea' %}">Administrar Tarea</a></li>
+        </ul>
+    </div>
+</li>
+{% endblock %}
+
+{% block content2 %}
+    <div class="container bg-light-subtle" >
+        <div class="card border-light mb-3 mx-auto">
+            <div class="col-md-12 text-center mb-5">
+                <h1 class="display-4" >Administrar Contenido </h1>
+            </div>
+            <div class="card-body">
+                <form class="form-inline mb-5">
+                    <div class="d-flex align-items-center">
+  
+                    </div>
+                </form>
+
+                <table class="table p-2">
+                    <thead class="bg-success" style="color: aliceblue;">
+                        <tr>
+                            <th><p class="lead">Nota</p</th>
+                            <th><p class="lead"> Comentario</p</th>
+                            <th><p class="lead"> Upload</p</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% if object_list %}
+                            {% for e in object_list %}
+                                <tr>
+                                    <td>{{ e.nota }}</td>
+                                    <td>{{ e.comentario }}</td>
+                                    <td>{{ e.upload}}</td>
+                                    
+                                    <td>
+                                        <a href="{% url 'update_contenido' e.id %}" class="btn btn-success"><i>Modificar</i></a>
+                                        <a href="{% url 'delete_contenido' e.id %}" class="btn btn-danger"><i>Delete</i></a>
+                                    </td>
+                      
+                                </tr>
+                            {% endfor %}
+                    
+                    
+                        {% else %}
+                            <tr>
+                                <td> No hay datos a Mostrar</td>
+                            </tr>
+                        {% endif %}
+                    
+                        </tbody>
+                    </table>
+
+                <div class="d-flex justify-content-between" style="padding-top: 3%;">
+                    <a href="{% url 'list_contenido' %}"  class="btn btn-success">Visualizar Contenidos </a>
+                    <a href="{% url 'create_contenido' %}"  class="btn btn-sm btn-success">Crear Contenido</a>
+                    <a href="{% url 'Home' %}"  class="btn btn-sm btn-danger">Cerrar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JQuery -->
+    <script src="{% static 'SofiaApp/JQuery/jquery-3.6.4.min.js' %}"></script>
+
+    <!-- Sweealert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!-- Login.js -->
+    <script src="{% static 'SofiaApp/administrarContenido.js' %}"></script>
+{% endblock %}

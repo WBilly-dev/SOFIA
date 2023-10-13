@@ -1,0 +1,90 @@
+{% extends "SofiaApp/base.html" %}
+
+{% load static %}
+{% block about %}
+{%endblock%}
+{% block about2 %}
+{%endblock%}
+{% block content1 %}
+    <link rel="stylesheet" href="{% static 'SofiaApp/contenido.css' %}"/>
+
+    <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
+    </form>
+    <ul class="navbar-nav menu" style="padding-left:10px">
+      <li class="nav-item">
+          <div class="dropdown"style="margin-right:50px">
+              <a class="btn btn-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">Opciones</a>
+              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuLink">
+                  <li><a class="dropdown-item" href="{% url 'Nota' %}">Notas</a></li>
+                  <li><a class="dropdown-item" href="{% url 'Contenido' %}">Contenido</a></li>
+                  <li><a class="dropdown-item" href="{% url 'Recurso Educativo' %}">Recurso Educativo</a></li>
+                  <li><a class="dropdown-item" href="{% url 'Tarea' %}">Tarea</a></li>
+              </ul>
+          </div>
+      </li>
+    </ul>
+{% endblock %}
+
+{% block content4%}
+<li class="nav-item">
+    <div class="dropdown"style="margin-right:50px">
+        <a class="btn btn-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">Acciones</a>
+        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuLink">
+            <li><a class="dropdown-item" href="{% url 'Administrar Nota' %}">Administrar Nota</a></li>
+            <li><a class="dropdown-item" href="{% url 'Administrar Contenido' %}">Administrar Contenido</a></li>
+            <li><a class="dropdown-item" href="{% url 'Administrar Recurso Educativo' %}">Administrar Recurso Educativo</a></li>
+            <li><a class="dropdown-item" href="{% url 'Administrar Tarea' %}">Administrar Tarea</a></li>
+        </ul>
+    </div>
+</li>
+{% endblock %}
+
+{% block content2 %}
+<main>
+
+    <div class="container bg-dark-subtle p-5" >
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th><p class="lead">Fecha de Publicación</p></th>
+                        <th><p class="lead">Nombre</p></th>
+                        <th><p class="lead">Comentario</p></th>
+                        <th><a href="{% url 'list_tarea1' %}"  class="btn  btn-success">Visualizar Tareas Activas</a></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if object_list %}
+                    {% for e in object_list %}
+                        <tr>
+                            <td>{{ e.created}}</td>
+                            <td>{{ e.nombre}}</td>
+                            <td>{{ e.comentario }}</td>
+                            <td><p class="lead">Visualizando</p></td>
+                        </tr>
+                    {%endfor%} 
+                    {% else %}
+                    <tr>
+                        <td> No hay datos a Mostrar</td>
+                    </tr>
+                {% endif %} 
+
+  
+                </tbody>
+            </table>
+        </div>
+        <section class="py-5 text-center container">
+            <div class="row py-lg-5">
+              <div class="col-md-6 col-md-8 mx-auto">
+                <h1 class="fw-light">Tarea</h1>
+                <p class="lead text-body-secondary">En esta sección se visualizan las diferentes tareas a realizar por el estudiante en cada contenido.</p>
+                <p>Por favor cumpla con la tarea.</p>
+              </div>
+            </div>
+        </section>
+    <div>
+</main>
+
+{% endblock %}

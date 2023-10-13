@@ -1,0 +1,187 @@
+{% extends "SofiaApp/base.html" %}
+
+{% load static %}
+{% block about %}
+{%endblock%}
+{% block about2 %}
+{%endblock%}
+{% block content1 %}
+    <link rel="stylesheet" href="{% static 'SofiaApp/contenido.css' %}"/>
+
+    <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
+    </form>
+    <ul class="navbar-nav menu" style="padding-left:10px">
+      <li class="nav-item">
+          <div class="dropdown"style="margin-right:50px">
+              <a class="btn btn-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">Opciones</a>
+              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuLink">
+                  <li><a class="dropdown-item" href="{% url 'Nota' %}">Notas</a></li>
+                  <li><a class="dropdown-item" href="{% url 'Contenido' %}">Contenido</a></li>
+                  <li><a class="dropdown-item" href="{% url 'Recurso Educativo' %}">Recurso Educativo</a></li>
+                  <li><a class="dropdown-item" href="{% url 'Tarea' %}">Tarea</a></li>
+              </ul>
+          </div>
+      </li>
+    </ul>
+{% endblock %}
+
+{% block content4%}
+<li class="nav-item">
+    <div class="dropdown"style="margin-right:50px">
+        <a class="btn btn-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">Acciones</a>
+        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuLink">
+            <li><a class="dropdown-item" href="{% url 'Administrar Nota' %}">Administrar Nota</a></li>
+            <li><a class="dropdown-item" href="{% url 'Administrar Contenido' %}">Administrar Contenido</a></li>
+            <li><a class="dropdown-item" href="{% url 'Administrar Recurso Educativo' %}">Administrar Recurso Educativo</a></li>
+            <li><a class="dropdown-item" href="{% url 'Administrar Tarea' %}">Administrar Tarea</a></li>
+        </ul>
+    </div>
+</li>
+{% endblock %}
+
+{% block content2 %}
+  <main>
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+          <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">Recursos Educativos</h1>
+            <p class="lead text-body-secondary">Estos recursos educativos en línea son accesibles desde cualquier lugar y en cualquier momento, lo que facilita el aprendizaje autónomo y el repaso de temas previamente estudiados</p>
+          </div>
+        </div>
+    </section>
+    <div class="album py-5 bg-body-tertiary">
+        <div class="container">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <div class="col">
+              <div class="card shadow-sm">
+                <img class="card-img-top" width="100%" height="100%" src="{% static 'SofiaApp/imagenes/v1.png' %}">
+                <div class="card-body">
+                  <p class="card-text">La rama de la matemáticas que estudia la colección de objetos analizando las propiedades y las relaciones entre los elementos que forman el conjunto</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary" onclick="window.location.href='https:www.youtube.com/watch?v=KmcRMlv9_T4&list=PLeySRPnY35dHACeGz_7oiU5Wo11AUt964'">Ver</button>
+                    </div>
+                    <small class="text-body-secondary">5:17 mins</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img class="card-img-top" width="100%" height="100%" src="{% static 'SofiaApp/imagenes/v2.png' %}">
+                <div class="card-body">
+                  <p class="card-text">Desarrollo del pensamiento y de la inteligencia. Capacidad de solucionar problemas en diferentes ámbitos de la vida y formulando hipótesis</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary" onclick="window.location.href='https:www.youtube.com/watch?v=vKe0UKSpNQQ&list=PLeySRPnY35dHBYcVHPisjBCVHBa954rMZ'">Ver</button>
+                    </div>
+                    <small class="text-body-secondary">7:18 mins</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img class="card-img-top" width="100%" height="100%" src="{% static 'SofiaApp/imagenes/v3.png' %}">
+                <div class="card-body">
+                  <p class="card-text">También llamada teoría de gráficas, es una rama de la matemática y las ciencias de la computación que estudia las propiedades de los grafos</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary" onclick="window.location.href='https:www.youtube.com/watch?v=F5Xjpg0-NhM&pp=ygURVGVvcsOtYSBkZSBncmFmb3M%3D'">Ver</button>
+                    </div>
+                    <small class="text-body-secondary">10:05 mins</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img class="card-img-top" width="100%" height="100%" src="{% static 'SofiaApp/imagenes/v4.png' %}">
+                <div class="card-body">
+                  <p class="card-text">Estudio de los métodos para contar las distintas configuraciones de los elementos de un conjunto que cumplan ciertos criterios especificados</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary" onclick="window.location.href='https:www.youtube.com/watch?v=ec8TQjfQrGY&pp=ygUMQ29tYmluYXRvcmlh'">Ver</button>
+                    </div>
+                    <small class="text-body-secondary">6:30 mins</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img class="card-img-top" width="100%" height="100%" src="{% static 'SofiaApp/imagenes/v5.png' %}">
+                <div class="card-body">
+                  <p class="card-text">¿Se puede resolver un sistema dado de ecuaciones polinómicas con coeficientes racionales en números racionales?</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary" onclick="window.location.href='https:www.youtube.com/watch?v=DVeZbMLNiCU&pp=ygUTVGVvcsOtYSBkZSBuw7ptZXJvcw%3D%3D'">Ver</button>
+                    </div>
+                    <small class="text-body-secondary">11:00 mins</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img class="card-img-top" width="100%" height="100%" src="{% static 'SofiaApp/imagenes/v6.png' %}">
+                <div class="card-body">
+                  <p class="card-text">Cada aplicación en un sitio web consta de tres tipos diferentes de código: código de característica, código de infraestructura y código de confiabilidad</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary" onclick="window.location.href='https:www.youtube.com/watch?v=O3J_arrZ5Wo&pp=ygUbVGVvcsOtYSBkZSBsYSBjb2RpZmljYWNpw7Nu'">Ver</button>
+                    </div>
+                    <small class="text-body-secondary">8:45 mins</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img class="card-img-top" width="100%" height="100%" src="{% static 'SofiaApp/imagenes/v7.png' %}">
+                <div class="card-body">
+                  <p class="card-text">Planteamiento que estudia el procesamiento y medición de datos en la transmisión de una información</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary" onclick="window.location.href='https:www.youtube.com/watch?v=-kVD7v_c-R8&pp=ygURVGVvcsOtYSBkZSBqdWVnb3M%3D'">Ver</button>
+                    </div>
+                    <small class="text-body-secondary">3:25 mins</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img class="card-img-top" width="100%" height="100%" src="{% static 'SofiaApp/imagenes/v8.png' %}">
+                <div class="card-body">
+                  <p class="card-text">Marco matemático que estudia la toma de decisiones estratégicas; su objetivo es predecir cómo trabajarán múltiples jugadores en una situación específica</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary" onclick="window.location.href='https:www.youtube.com/watch?v=ASHbuQ1H7qY&pp=ygUNQ3JpcHRvZ3JhZsOtYQ%3D%3D'">Ver</button>
+                    </div>
+                    <small class="text-body-secondary">9:10 mins</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img class="card-img-top" width="100%" height="100%" src="{% static 'SofiaApp/imagenes/v9.png' %}">
+                <div class="card-body">
+                  <p class="card-text">La criptografía es una práctica que consiste en proteger información mediante el uso de algoritmos codificados, hashes y firmas.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary" onclick="window.location.href='https:www.youtube.com/watch?v=vKe0UKSpNQQ&list=PLeySRPnY35dHBYcVHPisjBCVHBa954rMZ'">Ver</button>
+                    </div>
+                    <small class="text-body-secondary">7:45 mins</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </main>
+  {% endblock %}

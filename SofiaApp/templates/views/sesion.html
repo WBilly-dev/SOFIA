@@ -1,0 +1,49 @@
+{% extends "SofiaApp/base.html" %}
+
+{%block content2%}
+
+    {% load static %}
+    {% block about %}
+    {%endblock%}
+    <!-- CSS Animacion -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <div class="container my-5 bg-light-subtle" >
+        <div class="card col-md-4 mx-auto">
+            <div class="card-body">
+                <div class="text-center mb-4">
+                    <img src="{% static 'SofiaApp/imagenes/usuario.png' %}" class="rounded-circle animate__animated animate__bounceInDown" alt="Logo de usuario">
+                    <h4 class="text-center display-5">Inicio de Sesion</h4>
+                    <hr />
+                </div>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="row">
+
+                        <div class="form-group">
+                        <label for="username" class="form-label">Nombre de usuario:</label>
+                        <input type="text" class="form-control" id="username" name="username" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group">
+                        <label for="password" class="form-label">Contraseña:</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                       
+                    </div>
+                    </div>
+
+                    <div class="d-grid gap-2 p-5">
+                        <div class="form-group  mb-2">
+                        <button type="submit" class="btn btn-success" value='Ingresar' id="btn-registrar">Entrar</button>
+                        <button type="button" class="btn btn-danger" onclick="window.location.href='{% url 'Home' %}'">Cancelar</button>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</form>
+{%endblock%} 

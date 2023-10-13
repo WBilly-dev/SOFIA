@@ -1,0 +1,36 @@
+{% extends "SofiaApp/base.html" %}
+
+{%block content2%}
+{% load static %}
+{% block about %}
+{%endblock%}
+{% load crispy_forms_tags %}
+
+    <div class="card p-5">
+        <div class="card card-header bg-success text-white">
+            <h3 class="card-title ">Actualizar de Contenidos</h3>
+        </div>
+        <form class="for form-control form-row" method="post">
+
+            <div class="card-body">
+                {% csrf_token %}
+                {{ form| crispy}}
+
+
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+                <input type="submit" class="btn btn-primary" value="Actualizar">
+                <a href="{% url 'list_contenido' %}" class="btn btn-danger" >Cancelar</a>
+
+            </div>
+        </form>
+
+
+    </div>
+
+{%endblock%}
+
+{%block script%}
+<script type="application/javascript" src="{% static 'SofiaApp/JQuery/jquery-3.6.4.min.js' %}"></script>
+<script type="application/javascript" src="{% static 'SofiaApp/validar_campos.js' %}"></script>
+{%endblock%}

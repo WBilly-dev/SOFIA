@@ -1,0 +1,34 @@
+{% extends "SofiaApp/base.html" %}
+{% block about %}
+{%endblock%}
+{% block about2 %}
+{%endblock%}
+{% block content2%}
+    <div class="card p-5">
+        <div class="card card-header bg-success text-white">
+            <h3 class="card-title ">Eliminar Nota</h3>
+        </div>
+        <form class="for form-control form-row" method="post">
+            {% csrf_token %}
+
+            <div class="card-body">
+                <div class="alert alert-danger">
+                    <strong>Cuidado!</strong>
+                    <br>
+                    Estas seguro de eliminar el registro {{ object.nombre }}.
+                    <br>
+                    <p><strong>Nombre:</strong>{{ object.nombre}} </p>
+                </div>
+
+
+            </div>
+            <div class="card-footer">
+                <input type="submit" class="btn btn-danger" value="Eliminar">
+                <a href="{% url 'list_nota' %}" class="btn btn-danger">Cancelar</a>
+
+            </div>
+        </form>
+
+
+    </div>
+{% endblock %}

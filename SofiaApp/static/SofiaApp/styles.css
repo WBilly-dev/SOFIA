@@ -1,0 +1,12 @@
+#imagen {
+    border-radius: 20% 20% ;
+}
+
+.carousel-inner img {
+    max-height: 300px;
+    margin: 0 auto;
+}
+
+.navbar-nav .dropdown {
+    margin-right: 10px;
+}

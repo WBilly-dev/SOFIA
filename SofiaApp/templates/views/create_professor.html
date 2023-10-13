@@ -1,0 +1,80 @@
+{% extends "SofiaApp/base.html" %}
+
+{%block content2%}
+
+    {% load static %}
+    {% block about %}
+{%endblock%}
+{% block about2 %}
+{%endblock%}
+
+    <!-- CSS Animacion -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <div class="container my-5 bg-light-subtle" >
+        <div class="card col-md-12 mx-auto">
+            <div class="card-body col-12">
+                <div class="text-center mb-4">
+                    <img src="{% static 'SofiaApp/imagenes/usuario.png' %}" class="rounded-circle animate__animated animate__bounceInDown" alt="Logo de usuario">
+                    <h4 class="text-center display-5">Registro de usuario</h4>
+                    <hr />
+                </div>
+                <form method="post" action="{% url 'create_professor' %}">
+                    {% csrf_token %}
+                    <div class="row">
+                       <div class="form-group"> 
+                        <label for="username" class="form-label">Nombre:</label>
+                        <h6 class="text-center display-9">Requerido. 150 carácteres como máximo. Únicamente letras, dígitos y @/./+/-/_</h4>
+                        <input type="text" class="form-control" id="first_name" name="first_name" required>
+                       </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                        <label for="username" class="form-label">Apellidos:</label>
+                        <input type="text" class="form-control" id="last_name" name="last_name" required>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                        <label for="username" class="form-label">Nombre de usuario:</label>
+                        <input type="text" class="form-control" id="username" name="username" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                        <label for="email" class="form-label">Correo Electrónico:</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                        <label for="password" class="form-label">Contraseña:</label>
+                        <h6 class="text-center display-9">Su contraseña no puede asemejarse tanto a su otra información personal.<br>
+                            Su contraseña debe contener al menos 8 caracteres.<br>
+                            Su contraseña no puede ser una clave utilizada comúnmente.<br>
+                            Su contraseña no puede ser completamente numérica.</h6>
+                        <input type="password" class="form-control" id="password" name="password1" required>
+                       
+                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                        <label for="confirm-password" class="form-label">Confirmar Contraseña:</label>
+                        <input type="password" class="form-control" id="confirm-password" name="password2" required>
+
+                    </div>
+                    </div>
+                    </div>
+                    <div class="d-grid gap-2 p-5">
+                        <div class="form-group  mb-2">
+                        <button type="submit" class="btn btn-success" id="btn-registrar">Registrarse</button>
+                        <button type="button" class="btn btn-danger justify-content-end" onclick="window.location.href='{% url 'Home' %}'">Cancelar</button>
+                    </div>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+
+</form>
+{%endblock%} 

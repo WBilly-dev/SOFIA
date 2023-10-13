@@ -1,0 +1,54 @@
+{% extends "SofiaApp/base.html" %}
+{% block about %}
+{%endblock%}
+{% block about2 %}
+{%endblock%}
+{% block content2 %}
+<div class="row p-5">
+    <div class="card bg-success text-white">
+        <div class="card-body">Listado de Contenidos</div>
+    </div>
+    <div class="card-footer">
+        
+        <div class="card-body">
+    <table class="table">
+    <thead>
+    <td><h4>Nombre</h4></td>
+    <td><h4>Comentario</h4></td>
+    <td><h4>Upload</h4></td>
+    </thead>
+
+
+
+    <tbody>
+    {% if object_list %}
+        {% for e in object_list %}
+            <tr>
+                <td>{{ e.nombre }}</td>
+                <td>{{ e.comentario }}</td>
+                <td>{{ e.upload}}</td>
+                <td>
+                    <a href="{% url 'update_contenido' e.id %}" class="btn btn-success"><i>Edit</i></a>
+                    <a href="{% url 'delete_contenido' e.id %}" class="btn btn-danger"><i>Delete</i></a>
+                </td>
+  
+            </tr>
+        {% endfor %}
+
+
+    {% else %}
+        <tr>
+            <td> No hay datos a Mostrar</td>
+        </tr>
+    {% endif %}
+
+    </tbody>
+</table>
+</div> 
+
+</div> 
+<div class="d-flex justify-content-between" style="padding-top: 3%;"> 
+<a href="{% url 'create_contenido' %}" class="btn btn-success">Registrar</a> 
+<a href="{% url 'Administrar Contenido' %}" class="btn btn-danger">Cerrar</a>
+</div>
+{% endblock %}

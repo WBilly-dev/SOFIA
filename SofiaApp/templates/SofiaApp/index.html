@@ -1,0 +1,114 @@
+{% extends "SofiaApp/base.html" %}
+
+{% load static %}
+
+    <!-- Navegacion -->
+
+
+{% block content2 %}
+    <!-- Inicio -->
+    <section id="inicio" class="bg-light-subtle" style="padding-top: 5%; ">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center container">
+                   
+                    <h1 class="display-2" >Bienvenido/a <h4 style="color: green;">{{user.first_name | upper}}</h4></h1>
+                  
+                    <p class="lead">"El aprendizaje continuo es la clave para el éxito en el mundo digital actual"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Imagen de fondo -->
+    <div class="container-fluid p-0 bg-light-subtle" >
+        <div class="text-center">
+            <img src="{% static 'SofiaApp/imagenes/kevin-bhagat-zNRITe8NPqY-unsplash.jpg' %}" alt="Imagen de fondo" style="width: 70%; height: 20%;"
+                id="imagen" />
+        </div>
+    </div>
+
+    <br />
+
+    <!-- Acerca de -->
+    <section id="acercaDe" style="background-color:
+    #212529; color: aliceblue; padding-bottom: 5%; padding-top: 5%;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <hr class="my-4" />
+                    <h1 class="display-2">Acerca de SOFIA</h1>
+                    <hr class="my-4" />
+                    <p class="lead">SOFIA es una plataforma en línea para la enseñanza y aprendizaje de la Matemática
+                        Discreta.
+                        Nuestra
+                        misión es proporcionar una
+                        educación de calidad a cualquier persona, en cualquier lugar y en cualquier momento.</p>
+                    <p class="lead">Ofrecemos una amplia variedad de contenidos acerca de la asignatura, diseñado por
+                        expertos en la
+                        materia y está disponible para todas las personas que desean aprender.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <br />
+
+    <!-- Contacto -->
+    <section id="contacto" class="bg-light-subtle" >
+        <h2 class="text-center display-5" >Contactos</h2>
+        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active " data-bs-interval="3000">
+                    <div class="row align-items-center" style="padding-top: 5% ; padding-bottom: 5%;">
+                        <div class="col-md-6">
+                            <img src="{% static 'SofiaApp/imagenes/adrian.jpg' %}" class="d-block w-80" alt="Contacto 1" style="border-radius: 40%;">
+                        </div>
+                        <div class="col-md-6" >
+                            <p class="lead">Adrián Matheu Cabrera<p>
+                            <p class="lead">Celular: +53 54848595</p>
+                            <p class="lead">Email: amatheu@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="3000">
+                    <div class="row align-items-center">
+                        <div class="col-md-6" style="padding-top: 5%; padding-bottom: 5%;">
+                            <img src="{% static 'SofiaApp/imagenes/will.jpg' %}" class="d-block w-80" alt="Contacto 2"style="border-radius: 40%;">
+                        </div>
+                        <div class="col-md-6">
+                            <p class="lead">William Gómez Fernández</p>
+                            <p class="lead">Celular: +53 54175551</p>
+                            <p class="lead">Email: willfernandez@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                             
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <footer >
+        <div style="background-color: #212529; color: aliceblue;">
+            <div class="row" >
+                <div class="col-sm-12 text-center">
+                    <hr class="my-4" />
+                    <p class="lead">Derechos reservados 2023 &copy; SOFIA.</p>
+                    <hr class="my-4" />
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Archivo JavaScript-->
+    <script src="{% static 'SofiaApp/index.js' %}"></script>
+{% endblock %}
